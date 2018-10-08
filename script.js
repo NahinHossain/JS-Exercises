@@ -86,6 +86,58 @@ quantity:1
 };
 addItem(newItem);
 
+function sortCart(){
+  //add code
+  var len = cart.length;
+  var temp;
+  for(var i = 0; i <= len - 1; ++i) {
+    for (var j = 0; j <= len - 1; ++j) {
+      if(cart[i].name < cart[j].name) {
+        temp = cart[i];
+        cart[i] = cart[j];
+       cart[j] = temp;
+      }
+    }
+  }
+  return cart;
+}
+
+console.log(sortCart());
+
+
+function findByName(givenName){
+  for (var i = 0; i < cart.length; i++) {
+    if(cart[i].name == givenName){
+      console.log("Name: "+cart[i].name + "Price: " + cart[i].price + "Quantity: "+cart[i].quantity);
+    }
+  }
+}
+
+
+function totalBill(){
+  var totalAmount=0;
+  for( var i =0; i < cart.length; i++){
+    totalAmount = totalAmount + cart[i].quantity*cart[i].price;
+
+  }
+  return totalAmount;
+  }
+console.log(totalBill());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
